@@ -17,6 +17,7 @@ services:
       - /tmp/docker-data:/mnt/disco1
       - windows-data:/mnt/windows-data
     devices:
+      - "/dev/kvm:/dev/kvm"
       - "/dev/net/tun:/dev/net/tun"
     stop_grace_period: 2m
     restart: always
