@@ -6,8 +6,8 @@ services:
       VERSION: "10"
       USERNAME: ${WINDOWS_USERNAME}
       PASSWORD: ${WINDOWS_PASSWORD}
-      RAM_SIZE: "10G"
-      CPU_CORES: "4"
+      RAM_SIZE: "3G"
+      CPU_CORES: "2"
     cap_add:
       - NET_ADMIN
     ports:
@@ -16,6 +16,8 @@ services:
     volumes:
       - /tmp/docker-data:/mnt/disco1
       - windows-data:/mnt/windows-data
+    devices:
+      - "/dev/net/tun:/dev/net/tun"
     stop_grace_period: 2m
     restart: always
 
